@@ -86,16 +86,6 @@ auth_param basic children 5<br>
 auth_param basic realm Squid proxy-caching web server<br>
 auth_param basic credentialsttl 2 hours<br>
 auth_param basic casesensitive off<br>
-1
-2
-3
-4
-5
-auth_param basic program /usr/lib/squid/ncsa_auth /etc/squid/squid_passwd<br>
-auth_param basic children 5<br>
-auth_param basic realm Squid proxy-caching web server<br>
-auth_param basic credentialsttl 2 hours<br>
-auth_param basic casesensitive off<br>
 acl ncsa_users proxy_auth REQUIRED<br>
 http_access allow ncsa_users<br>
 这里要注意，如果你的系统是 64 位的，那么 /usr/lib/squid/ncsa_auth 这个模块的地址应该是 /usr/lib64/squid/ncsa_auth。设置之前建议用这个命令来检查一下：<br>
